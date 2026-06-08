@@ -10,22 +10,69 @@ import { usePropertySearch } from "./hooks/usePropertySearch.js";
 function App() {
   const { results, loading, error, query, filters, search } = usePropertySearch();
   const [selectedProperty, setSelectedProperty] = useState(null);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
-    <div id="app-root">
-      {/* ── Hero / Header ── */}
+    <div className="app-root">
+
+      {/* ══════════════════════════════════════════
+          HEADER / NAVBAR
+      ══════════════════════════════════════════ */}
       <header className="app-header">
         <div className="header-inner">
-          <div className="logo">
-            <span className="logo-icon">🏠</span>
+
+          {/* Logo */}
+          <a href="/" className="logo" aria-label="GharAI Home">
+            <span className="logo-icon">🏡</span>
             <span className="logo-text">GharAI</span>
+          </a>
+
+          {/* Desktop Nav Links */}
+          <nav className="nav-links" aria-label="Main navigation">
+            <a href="#search" className="nav-link active">Search</a>
+            <a href="#listings" className="nav-link">Listings</a>
+            <a href="#about" className="nav-link">About</a>
+            <a href="#contact" className="nav-link">Contact</a>
+          </nav>
+
+          {/* Right side */}
+          <div className="header-right">
+            {/* AI badge
+            <span className="header-ai-badge">
+              <span className="badge-dot" />
+              AI Powered
+            </span> */}
+
+            {/* Tagline (wide screens only) */}
+            {/* <p className="header-tagline">Describe your home,<br />we'll find it.</p> */}
+
+            {/* Mobile hamburger */}
+            <button
+              className="nav-hamburger"
+              aria-label="Toggle menu"
+              aria-expanded={mobileNavOpen}
+              onClick={() => setMobileNavOpen((o) => !o)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
           </div>
-          <p className="header-tagline">Find your dream home in Gurgaon — just describe it.</p>
         </div>
+
+        {/* Mobile Nav Drawer */}
+        <nav className={`mobile-nav ${mobileNavOpen ? "open" : ""}`} aria-label="Mobile navigation">
+          <a href="#search"   className="nav-link" onClick={() => setMobileNavOpen(false)}>Search</a>
+          <a href="#listings" className="nav-link" onClick={() => setMobileNavOpen(false)}>Listings</a>
+          <a href="#about"    className="nav-link" onClick={() => setMobileNavOpen(false)}>About</a>
+          <a href="#contact"  className="nav-link" onClick={() => setMobileNavOpen(false)}>Contact</a>
+        </nav>
       </header>
 
-      {/* ── Search section ── */}
-      <section className="search-section" aria-label="Property search">
+      {/* ══════════════════════════════════════════
+          SEARCH SECTION
+      ══════════════════════════════════════════ */}
+      <section id="search" className="search-section" aria-label="Property search">
         <SearchBar onSearch={search} loading={loading} />
         <ClarifyBubble query={query} filters={filters} />
         {error && <p className="search-error">⚠️ {error}</p>}
@@ -38,15 +85,19 @@ function App() {
         )}
       </section>
 
-      {/* ── Property grid ── */}
-      <main className="main-content">
+      {/* ══════════════════════════════════════════
+          PROPERTY GRID
+      ══════════════════════════════════════════ */}
+      <main id="listings" className="main-content">
         <PropertyGrid
           properties={results}
           onCardClick={(property) => setSelectedProperty(property)}
         />
       </main>
 
-      {/* ── Modal ── */}
+      {/* ══════════════════════════════════════════
+          MODAL
+      ══════════════════════════════════════════ */}
       {selectedProperty && (
         <PropertyModal
           property={selectedProperty}
@@ -55,11 +106,20 @@ function App() {
         />
       )}
 
-      {/* ── Footer ── */}
+      {/* ══════════════════════════════════════════
+          FOOTER
+      ══════════════════════════════════════════ */}
       <footer className="app-footer">
-        <p>GharAI · Powered by <a href="https://openrouter.ai" target="_blank" rel="noopener noreferrer">OpenRouter</a> · Model: google/gemma-3-27b-it:free</p>
-        <p className="footer-note">🔑 API key is frontend-only for this prototype. In production, proxy through a backend.</p>
+        <p>
+          GharAI &middot; Powered by{" "}
+          <a href="https://openrouter.ai" target="_blank" rel="noopener noreferrer">OpenRouter</a>
+          {" "}&middot; Model: <code>google/gemma-3-27b-it:free</code>
+        </p>
+        <p className="footer-note">
+          🔑 API key is frontend-only for this prototype. In production, proxy through a backend.
+        </p>
       </footer>
+
     </div>
   );
 }
