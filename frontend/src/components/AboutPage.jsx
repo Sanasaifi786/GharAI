@@ -52,21 +52,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Tech stack */}
-      <section className="about-section">
-        <h2 className="about-section-title">Technology</h2>
-        <div className="about-tech-list">
-          <div className="tech-item"><span>⚛️</span> React + Vite</div>
-          <div className="tech-item"><span>🤖</span> OpenRouter AI — google/gemma-3-27b-it:free</div>
-          <div className="tech-item"><span>🎨</span> Vanilla CSS with custom design tokens</div>
-          <div className="tech-item"><span>📦</span> No backend — fully client-side prototype</div>
-        </div>
-        <p className="about-body about-note">
-          🔑 <strong>Note:</strong> The API key is exposed on the frontend for this prototype only.
-          In a production build, all AI calls would be proxied through a secure backend.
-        </p>
-      </section>
-
     </div>
   );
 }
