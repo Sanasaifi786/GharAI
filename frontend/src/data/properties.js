@@ -7,7 +7,7 @@ const properties = [
     price: 52,
     amenities: ["east facing", "near school", "park view", "power backup"],
     matchReason: "🌅 East-facing sunlight · Near DPS School",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_2bhk_sunlight.png",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const properties = [
     price: 87,
     amenities: ["near metro", "club house", "gated society", "gym"],
     matchReason: "🚇 Metro in 5 mins · Premium Gated Society",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_3bhk_metro.png",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const properties = [
     price: 145,
     amenities: ["pool view", "west facing", "kids play area", "24x7 security"],
     matchReason: "🏊 Pool-facing villa feel · Spacious 4BHK",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_4bhk_pool.png",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const properties = [
     price: 68,
     amenities: ["new development", "ready to move", "near highway", "shopping mall nearby"],
     matchReason: "🏗️ Ready to Move · New Sector with Growth",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_2bhk_new.png",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const properties = [
     price: 98,
     amenities: ["near hospital", "south facing", "vastu compliant", "park view"],
     matchReason: "🏥 Hospital in 2km · Vastu Perfect South-facing",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_3bhk_park.png",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const properties = [
     price: 55,
     amenities: ["near school", "east facing", "modular kitchen", "low floor"],
     matchReason: "🍳 Modular Kitchen · Low Floor · School Zone",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_2bhk_sunlight.png",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ const properties = [
     price: 195,
     amenities: ["golf course view", "luxury", "club membership", "concierge service"],
     matchReason: "⛳ Golf Course View · Ultra Luxury Living",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_4bhk_golf.png",
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ const properties = [
     price: 79,
     amenities: ["north facing", "near school", "gym", "visitor parking"],
     matchReason: "🏫 Walking distance to school · North-facing breeze",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_3bhk_metro.png",
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ const properties = [
     price: 62,
     amenities: ["new possession", "near expressway", "affordable", "earthquake resistant"],
     matchReason: "🛣️ Expressway Access · Affordable New Possession",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_2bhk_new.png",
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ const properties = [
     price: 112,
     amenities: ["east facing", "near metro", "rooftop terrace", "gated society"],
     matchReason: "🏙️ Rooftop Terrace · Metro Connectivity",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_3bhk_park.png",
   },
   {
     id: 11,
@@ -107,7 +107,7 @@ const properties = [
     price: 168,
     amenities: ["corner unit", "3 balconies", "servant quarter", "near market"],
     matchReason: "🏠 Corner Unit · 3 Balconies · Servant Quarter",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_4bhk_pool.png",
   },
   {
     id: 12,
@@ -117,7 +117,7 @@ const properties = [
     price: 58,
     amenities: ["pet friendly", "garden facing", "power backup", "intercom"],
     matchReason: "🐾 Pet Friendly · Garden-facing Balcony",
-    image: "https://placehold.co/400x220?text=360°+View",
+    image: "/prop_2bhk_sunlight.png",
   },
 ];
 
