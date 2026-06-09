@@ -1,5 +1,5 @@
 const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY;
-const MODEL = "google/gemma-3-27b-it:free";
+const MODEL = "google/gemma-4-31b-it:free";
 const BASE_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 /**
