@@ -15,7 +15,7 @@ const properties = [
     area: 1450,
     sector: "Sector 50, Gurgaon",
     price: 87,
-    amenities: ["near metro", "club house", "gated society", "gym"],
+    amenities: ["near metro", "club house", "gated society", "gym","near Bank"],
     matchReason: "🚇 Metro in 5 mins · Premium Gated Society",
     image: "/prop_3bhk_metro.png",
   },
