@@ -13,7 +13,7 @@ GharAI is a frontend-only real estate search prototype for Gurgaon properties. I
 
 The app uses an LLM to extract structured filters from the query and matches them against a curated mock dataset of 12 Gurgaon properties.
 
----
+----
 
 ## ✨ Features
 
