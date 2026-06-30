@@ -1,4 +1,4 @@
-import React from "react";
+
 import MatchBadge from "./MatchBadge.jsx";
 import { formatPrice } from "../utils/formatPrice.js";
 
