@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback } from "react";
 import { callOpenRouter } from "../services/openrouter.js";
 import { formatPrice } from "../utils/formatPrice.js";
 
@@ -12,15 +12,8 @@ export function usePropertySummary() {
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  
-  // Track the last fetched property to prevent double-fetching in StrictMode
-  const lastFetchedRef = useRef(null);
 
   const getSummary = useCallback(async (property, userQuery) => {
-    const fetchKey = `${property.id}-${userQuery}`;
-    if (lastFetchedRef.current === fetchKey) return;
-    lastFetchedRef.current = fetchKey;
-
     setLoading(true);
     setError(null);
     setSummary("");

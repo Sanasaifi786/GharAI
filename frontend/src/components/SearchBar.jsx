@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { decodeQueryParam } from "../utils/urlParams.js";
-import '../App.css'
 
 export default function SearchBar({ onSearch, loading }) {
   const savedQuery = decodeQueryParam() || "";
