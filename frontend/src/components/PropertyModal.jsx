@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { usePropertySummary } from "../hooks/usePropertySummary.js";
 import MatchBadge from "./MatchBadge.jsx";
 import { formatPrice } from "../utils/formatPrice.js";
@@ -10,7 +10,7 @@ export default function PropertyModal({ property, userQuery, onClose }) {
     if (property) {
       getSummary(property, userQuery);
     }
-  }, [property, userQuery]);
+  }, [property, userQuery, getSummary]);
 
   useEffect(() => {
     const handler = (e) => e.key === "Escape" && onClose();

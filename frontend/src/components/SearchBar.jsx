@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { decodeQueryParam } from "../utils/urlParams.js";
 
 export default function SearchBar({ onSearch, loading }) {
-  const [input, setInput] = useState("");
+  const savedQuery = decodeQueryParam() || "";
+  const [input, setInput] = useState(savedQuery);
 
   useEffect(() => {
-    const savedQuery = decodeQueryParam();
     if (savedQuery) {
-      setInput(savedQuery);
       onSearch(savedQuery);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = (e) => {
