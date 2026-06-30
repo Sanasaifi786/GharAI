@@ -1,4 +1,4 @@
-import React from "react";
+
 import PropertyCard from "./PropertyCard.jsx";
 
 export default function PropertyGrid({ properties, onCardClick }) {

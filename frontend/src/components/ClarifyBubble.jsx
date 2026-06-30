@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { callOpenRouter } from "../services/openrouter.js";
 
 const SYSTEM_PROMPT = `You are a helpful real estate assistant for Gurgaon.
@@ -9,11 +9,16 @@ Keep the question under 20 words. Do not explain yourself.`;
 export default function ClarifyBubble({ query, filters }) {
   const [clarification, setClarification] = useState("");
   const [visible, setVisible] = useState(false);
+  const [prevQuery, setPrevQuery] = useState(query);
+
+  if (query !== prevQuery) {
+    setPrevQuery(query);
+    setClarification("");
+    setVisible(false);
+  }
 
   useEffect(() => {
     if (!query || filters?.location) {
-      setClarification("");
-      setVisible(false);
       return;
     }
 
@@ -31,7 +36,8 @@ export default function ClarifyBubble({ query, filters }) {
         } else if (!cancelled) {
           setVisible(false);
         }
-      } catch {
+      } catch (error) {
+        console.error("Failed to fetch clarification", error);
       }
     }
 
@@ -39,7 +45,9 @@ export default function ClarifyBubble({ query, filters }) {
     return () => { cancelled = true; };
   }, [query, filters]);
 
-  if (!visible || !clarification) return null;
+  if (!query || filters?.location || !visible || !clarification) {
+    return null;
+  }
 
   return (
     <div className="clarify-bubble" role="status" aria-live="polite">
